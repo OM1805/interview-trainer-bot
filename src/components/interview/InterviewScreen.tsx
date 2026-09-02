@@ -1,20 +1,8 @@
 import { Mic, Square, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Panel, ProgressIndicator, StatusPill, Timer, WebcamPreview } from "./primitives";
 import type { TimerState } from "./primitives";
-import {
-  cameraStates,
-  questions,
-  type AnswerPhase,
-  type CameraState,
-} from "@/lib/interview-mock";
+import { questions, type AnswerPhase, type CameraState } from "@/lib/interview-mock";
 
 interface Props {
   index: number;
@@ -22,7 +10,6 @@ interface Props {
   difficulty: string;
   phase: AnswerPhase;
   camera: CameraState;
-  onCameraChange: (v: CameraState) => void;
   onStart: () => void;
   onStop: () => void;
   onSubmit: () => void;
@@ -49,7 +36,6 @@ export function InterviewScreen({
   difficulty,
   phase,
   camera,
-  onCameraChange,
   onStart,
   onStop,
   onSubmit,
@@ -164,26 +150,6 @@ export function InterviewScreen({
             <WebcamPreview state={camera} />
           </div>
 
-          <div className="mt-5 border-t border-border pt-4">
-            <label
-              htmlFor="camera-state"
-              className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
-            >
-              Preview state (prototype)
-            </label>
-            <Select value={camera} onValueChange={(v) => onCameraChange(v as CameraState)}>
-              <SelectTrigger id="camera-state" className="mt-2 h-9 w-full">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {cameraStates.map((s) => (
-                  <SelectItem key={s.value} value={s.value}>
-                    {s.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
         </Panel>
       </div>
     </div>

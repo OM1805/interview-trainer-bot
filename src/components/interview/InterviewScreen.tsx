@@ -10,7 +10,6 @@ interface Props {
   difficulty: string;
   phase: AnswerPhase;
   camera: CameraState;
-  onCameraChange: (v: CameraState) => void;
   onStart: () => void;
   onStop: () => void;
   onSubmit: () => void;

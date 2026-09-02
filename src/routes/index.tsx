@@ -69,7 +69,6 @@ function Index() {
           difficulty={difficulty}
           phase={phase}
           camera={camera}
-          onCameraChange={setCamera}
           onStart={() => setPhase("answering")}
           onStop={() => setPhase("stopped")}
           onSubmit={() => {

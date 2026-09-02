@@ -55,8 +55,8 @@ export function InterviewScreen({
   onSubmit,
   onExit,
 }: Props) {
-  const question = questions[index];
-  const timer = timerByIndex[index] ?? timerByIndex[0];
+  const question = questions[index] ?? questions[0]!;
+  const timer = timerByIndex[index] ?? timerByIndex[0]!;
   const status = phaseMeta[phase];
 
   return (

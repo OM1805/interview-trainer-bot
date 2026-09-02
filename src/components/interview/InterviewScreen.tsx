@@ -1,20 +1,8 @@
 import { Mic, Square, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Panel, ProgressIndicator, StatusPill, Timer, WebcamPreview } from "./primitives";
 import type { TimerState } from "./primitives";
-import {
-  cameraStates,
-  questions,
-  type AnswerPhase,
-  type CameraState,
-} from "@/lib/interview-mock";
+import { questions, type AnswerPhase, type CameraState } from "@/lib/interview-mock";
 
 interface Props {
   index: number;

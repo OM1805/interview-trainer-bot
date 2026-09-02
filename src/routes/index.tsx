@@ -30,7 +30,7 @@ function Index() {
   const [stage, setStage] = useState<Stage>("setup");
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<AnswerPhase>("idle");
-  const [camera, setCamera] = useState<CameraState>("active");
+  const [camera] = useState<CameraState>("active");
   const [role, setRole] = useState("Software Engineer");
   const [difficulty, setDifficulty] = useState("Intermediate");
 
